@@ -5,6 +5,34 @@ import person2 from "../assets/nav/2nd.svg";
 import person3 from "../assets/nav/3rd.svg";
 import person4 from "../assets/nav/4th.svg";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
+
+// keyframes //
+
+const homeImages = keyframes`
+from{
+  transform: translateY(50%);
+  opacity: 0
+}
+to{
+  transform:translateX(0%);
+  opacity:1
+}
+`;
+
+const displayImage = keyframes`
+from{
+  transform: translateY(30%);
+  opacity:0;
+}
+
+to{
+  transform: translateY(0%);
+  opacity:1;
+}
+`;
+
+// style //
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,7 +44,7 @@ const Wrapper = styled.div`
 `;
 
 const HoverBackImg = styled(Wrapper)`
-  max-height: 100%;
+  height: 100%;
 `;
 
 const NavSite = styled.div`
@@ -35,23 +63,25 @@ const Ul = styled.ul`
   display: flex;
   justify-content: space-around;
 `;
+
 const HoverBack = styled.div`
-  margin-top: 10px;
-  height: 80vh;
+  height: 95vh;
   background-color: red;
+  animation-name: ${displayImage};
+  animation-duration: 0.5s;
 `;
 
 const LiStyle = styled.li`
   position: relative;
-  cursor: pointer;
-  padding: 50px 0;
+  padding: 60px 0;
+
   &::before {
     content: "";
     height: 2px;
     background-color: black;
     display: inline-block;
     position: absolute;
-    bottom: 45px;
+    bottom: 55px;
     left: 0px;
     width: 0%;
     transition: width 0.3s ease-in-out;
@@ -65,11 +95,10 @@ const LiStyle = styled.li`
     background-color: black;
     display: inline-block;
     position: absolute;
-    bottom: 45px;
+    bottom: 55px;
     right: 0;
     width: 0%;
     transition: width 0.3s ease-in-out;
-    cursor: pointer;
   }
   &:hover::after {
     width: 100%;
@@ -81,15 +110,14 @@ const ImageHoverBack = styled.img`
   height: 100px;
 `;
 
+const HomeImagesBg = styled(ImageHoverBack)`
+  margin-top: 30px;
+  animation-name: ${homeImages};
+  animation-duration: 1s;
+`;
+
 function Nav() {
   const [show, setShow] = useState(false);
-
-  const MouseOver = (e) => {
-    if (e.screenX < 1235 || e.screenX > 1274) {
-      setShow(false);
-    }
-  };
-
   return (
     <NavSite>
       <Wrapper>
@@ -103,10 +131,9 @@ function Nav() {
         <Ul>
           <LiStyle
             onMouseEnter={() => setShow(true)}
-            onMouseLeave={MouseOver}
-            // (e) => console.log("y:", e.screenY, "x:", e.screenX)
+            onMouseLeave={() => setShow(false)}
           >
-            Home
+            <span style={{ cursor: "pointer" }}>Home</span>
           </LiStyle>
           <LiStyle>Pages</LiStyle>
           <LiStyle>Blog</LiStyle>
@@ -119,16 +146,17 @@ function Nav() {
         </Ul>
       </Wrapper>
       {show && (
-        <div onMouseLeave={() => setShow(false)}>
-          <HoverBack>
-            <HoverBackImg>
-              <ImageHoverBack src={person1} />
-              <ImageHoverBack src={person2} />
-              <ImageHoverBack src={person3} />
-              <ImageHoverBack src={person4} />
-            </HoverBackImg>
-          </HoverBack>
-        </div>
+        <HoverBack
+          onMouseLeave={() => setShow(false)}
+          onMouseEnter={() => setShow(true)}
+        >
+          <HoverBackImg>
+            <HomeImagesBg src={person1} />
+            <HomeImagesBg src={person2} />
+            <HomeImagesBg src={person3} />
+            <HomeImagesBg src={person4} />
+          </HoverBackImg>
+        </HoverBack>
       )}
     </NavSite>
   );
