@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Nav from "./Nav";
+import Header from "./Component/Header/Header";
 
 const AppStyle = styled.div``;
 
 function App() {
   return (
     <AppStyle>
-      <Nav />
+      <Header />
     </AppStyle>
   );
 }

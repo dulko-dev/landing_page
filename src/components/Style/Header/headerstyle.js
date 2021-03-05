@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { homeImages, displayImage } from "./navkey";
+import { displayImage } from "./headerkey";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,10 +8,6 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   max-height: 100px;
-`;
-
-export const HoverBackImg = styled(Wrapper)`
-  height: 100%;
 `;
 
 export const NavSite = styled.div`
@@ -32,7 +28,7 @@ export const Ul = styled.ul`
 `;
 
 export const HoverBack = styled.div`
-  height: 95vh;
+  position: relative;
   background-color: red;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
@@ -72,13 +68,11 @@ export const LiStyle = styled.li`
   }
 `;
 
-export const ImageHoverBack = styled.img`
+export const Logo = styled.img`
   width: 200px;
   height: 100px;
 `;
 
-export const HomeImagesBg = styled(ImageHoverBack)`
-  margin-top: 30px;
-  animation-name: ${homeImages};
-  animation-duration: 1s;
+export const HomeImagesBg = styled.ul`
+ 
 `;
