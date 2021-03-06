@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
 
 export const NavSite = styled.div`
   width: 100%;
-  height: 100vh;
 `;
 
 export const ButtonStyle = styled.button`
@@ -29,7 +28,7 @@ export const Ul = styled.ul`
 
 export const HoverBack = styled.div`
   position: relative;
-  background-color: red;
+  background-color: white;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;
@@ -73,6 +72,4 @@ export const Logo = styled.img`
   height: 100px;
 `;
 
-export const HomeImagesBg = styled.ul`
- 
-`;
+export const HomeImagesBg = styled.ul``;

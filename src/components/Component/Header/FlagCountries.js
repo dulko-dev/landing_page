@@ -6,6 +6,7 @@ import {
   UlStyle,
   Waiting,
   ImageFlag,
+  ImageEffect,
 } from "../../Style/Header/flagCountriesstyle";
 
 function FlagCountries({ data }) {
@@ -56,8 +57,10 @@ function FlagCountries({ data }) {
     <UlStyle>
       {current.map((flag) => (
         <LiStyle key={flag.name}>
-          <ImageFlag src={flag.flag} />
-          <Title>{flag.name}</Title>
+          <ImageEffect>
+            <ImageFlag src={flag.flag} />
+          </ImageEffect>
+            <Title>{flag.name}</Title>
         </LiStyle>
       ))}
       {isLoading && (
