@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { displayImage } from "./headerkey";
+import { displayImage } from "../keyframes";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const NavSite = styled.div`
+  position: relative;
   width: 100%;
 `;
 
@@ -28,7 +29,7 @@ export const Ul = styled.ul`
 
 export const HoverBack = styled.div`
   position: relative;
-  background-color: white;
+  background-color: red;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;
@@ -72,4 +73,12 @@ export const Logo = styled.img`
   height: 100px;
 `;
 
-export const HomeImagesBg = styled.ul``;
+export const SpanStyle = styled.span`
+  cursor: pointer;
+`;
+
+export const HoverPage = styled.div`
+  position: relative;
+  animation-name: ${displayImage};
+  animation-duration: 0.5s;
+`;

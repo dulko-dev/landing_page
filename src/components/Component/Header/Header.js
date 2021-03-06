@@ -10,10 +10,20 @@ import {
   HoverBack,
   LiStyle,
   Logo,
+  SpanStyle,
+  HoverPage,
 } from "../../Style/Header/headerstyle";
+import Page from "./Page";
 
 function Header() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState({
+    home: false,
+    pages: false,
+    blog: false,
+    shop: false,
+    element: false,
+    portfolio: false,
+  });
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -47,12 +57,17 @@ function Header() {
 
         <Ul>
           <LiStyle
-            onMouseEnter={() => setShow(true)}
-            onMouseLeave={() => setShow(false)}
+            onMouseEnter={() => setShow({ home: true })}
+            onMouseLeave={() => setShow({ home: false })}
           >
-            <span style={{ cursor: "pointer" }}>Home</span>
+            <SpanStyle>Home</SpanStyle>
           </LiStyle>
-          <LiStyle>Pages</LiStyle>
+          <LiStyle
+            onMouseEnter={() => setShow({ pages: true })}
+            onMouseLeave={() => setShow({ pages: false })}
+          >
+            <SpanStyle>Pages</SpanStyle>
+          </LiStyle>
           <LiStyle>Blog</LiStyle>
           <LiStyle>Shop</LiStyle>
           <LiStyle>Elements</LiStyle>
@@ -62,13 +77,21 @@ function Header() {
           </li>
         </Ul>
       </Wrapper>
-      {show && (
+      {show.home && (
         <HoverBack
-          onMouseLeave={() => setShow(false)}
-          onMouseEnter={() => setShow(true)}
+          onMouseLeave={() => setShow({ home: false })}
+          onMouseEnter={() => setShow({ home: true })}
         >
           <FlagCountries data={data} />
         </HoverBack>
+      )}
+      {show.pages && (
+        <HoverPage
+          onMouseLeave={() => setShow({ pages: false })}
+          onMouseEnter={() => setShow({ pages: true })}
+        >
+          <Page />
+        </HoverPage>
       )}
     </NavSite>
   );

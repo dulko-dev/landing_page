@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { displayListElement } from "./flagCountrieskey";
+import { displayListElement } from "../keyframes";
 
 export const ImageFlag = styled.img`
   width: 300px;
@@ -31,7 +31,7 @@ export const ImageEffect = styled.div`
     left: 350px;
   }
   &:hover {
-    transition: all .7s linear;
+    transition: all 0.7s linear;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 `;
