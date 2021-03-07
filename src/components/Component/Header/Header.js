@@ -67,6 +67,14 @@ function Header() {
             onMouseLeave={() => setShow({ pages: false })}
           >
             <SpanStyle>Pages</SpanStyle>
+            {show.pages && (
+              <HoverPage
+                onMouseLeave={() => setShow({ pages: false })}
+                onMouseEnter={() => setShow({ pages: true })}
+              >
+                <Page />
+              </HoverPage>
+            )}
           </LiStyle>
           <LiStyle>Blog</LiStyle>
           <LiStyle>Shop</LiStyle>
@@ -84,14 +92,6 @@ function Header() {
         >
           <FlagCountries data={data} />
         </HoverBack>
-      )}
-      {show.pages && (
-        <HoverPage
-          onMouseLeave={() => setShow({ pages: false })}
-          onMouseEnter={() => setShow({ pages: true })}
-        >
-          <Page />
-        </HoverPage>
       )}
     </NavSite>
   );

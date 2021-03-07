@@ -78,7 +78,9 @@ export const SpanStyle = styled.span`
 `;
 
 export const HoverPage = styled.div`
-  position: relative;
+  position: absolute;
+  bottom: -325px;
+  left: -30px;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;

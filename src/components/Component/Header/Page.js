@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { displayImage } from "../../Style/keyframes";
 
 const Ul = styled.ul`
-  padding: 16px 0;
-  position: absolute;
-  right: 425px;
+  width: 250px;
+  padding: 10px 0;
   background-color: red;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;
 
 const Li = styled.li`
-  width: 175px;
-  padding: 16px 30px;
+  margin: 10px 0;
+  padding: 0 16px;
   &:nth-child(1)::after,
   &:nth-child(2)::after,
   &:nth-child(3)::after,
   &:nth-last-child(3)::after {
-    content: "\f061";
+    content: "\f054";
     position: absolute;
     font-family: "Font Awesome 5 Free";
     font-weight: 600;
@@ -30,12 +29,54 @@ const Li = styled.li`
     cursor: pointer;
   }
 `;
+const SecondUl = styled.ul`
+  position: absolute;
+  right: -160px;
+  top: 0;
+  background-color: red;
+  animation-name: ${displayImage};
+  animation-duration: 0.5s;
+`;
+
+const SecondLi = styled.li`
+  width: 125px;
+  padding: 0 20px;
+  margin: 10px 0;
+  color: black;
+  &:hover {
+    color: violet;
+  }
+`;
 
 function Page() {
+  const [show, setShow] = useState({
+    career: false,
+    services: false,
+    case: false,
+    contact: false,
+  });
+
   return (
     <Ul>
-      <Li>Career</Li>
-      <Li>Services</Li>
+      <Li
+        onMouseEnter={() => setShow({ career: true })}
+        onMouseLeave={() => setShow({ career: false })}
+      >
+        Career
+        {show.career && (
+          <SecondUl style={{}}>
+            <SecondLi>Job List</SecondLi>
+            <SecondLi>Job Details</SecondLi>
+            <SecondLi>Apply to Job</SecondLi>
+          </SecondUl>
+        )}
+      </Li>
+      <Li
+        onMouseEnter={() => setShow({ services: true })}
+        onMouseLeave={() => setShow({ services: false })}
+      >
+        Services
+      </Li>
       <Li>Case Study</Li>
       <Li>About us</Li>
       <Li>Process</Li>
