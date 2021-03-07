@@ -14,6 +14,7 @@ import {
   HoverPage,
 } from "../../Style/Header/headerstyle";
 import Page from "./Page";
+import Blog from "./Blog";
 
 function Header() {
   const [show, setShow] = useState({

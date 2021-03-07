@@ -29,7 +29,7 @@ const Li = styled.li`
     cursor: pointer;
   }
 `;
-const SecondUl = styled.ul`
+const CareerUl = styled.ul`
   position: absolute;
   right: -160px;
   top: 0;
@@ -38,8 +38,18 @@ const SecondUl = styled.ul`
   animation-duration: 0.5s;
 `;
 
-const SecondLi = styled.li`
-  width: 125px;
+const ServicesUl = styled(CareerUl)`
+  top: 20px;
+`;
+const CaseUl = styled(CareerUl)`
+  top: 50px;
+`;
+const ContactUl = styled(CareerUl)`
+  top: 235px;
+`;
+
+const CareerLi = styled.li`
+  width: 130px;
   padding: 0 20px;
   margin: 10px 0;
   color: black;
@@ -64,11 +74,11 @@ function Page() {
       >
         Career
         {show.career && (
-          <SecondUl style={{}}>
-            <SecondLi>Job List</SecondLi>
-            <SecondLi>Job Details</SecondLi>
-            <SecondLi>Apply to Job</SecondLi>
-          </SecondUl>
+          <CareerUl>
+            <CareerLi>Job List</CareerLi>
+            <CareerLi>Job Details</CareerLi>
+            <CareerLi>Apply to Job</CareerLi>
+          </CareerUl>
         )}
       </Li>
       <Li
@@ -76,15 +86,44 @@ function Page() {
         onMouseLeave={() => setShow({ services: false })}
       >
         Services
+        {show.services && (
+          <ServicesUl>
+            <CareerLi>Service 01</CareerLi>
+            <CareerLi>Service 02</CareerLi>
+            <CareerLi>Service 03</CareerLi>
+          </ServicesUl>
+        )}
       </Li>
-      <Li>Case Study</Li>
+      <Li
+        onMouseEnter={() => setShow({ case: true })}
+        onMouseLeave={() => setShow({ case: false })}
+      >
+        Case Study
+        {show.case && (
+          <CaseUl>
+            <CareerLi>Case Study</CareerLi>
+            <CareerLi>Case Studies details</CareerLi>
+          </CaseUl>
+        )}
+      </Li>
       <Li>About us</Li>
       <Li>Process</Li>
       <Li>Pricing</Li>
       <Li>Team</Li>
       <Li>Sign up</Li>
       <Li>Sign in</Li>
-      <Li>Contact</Li>
+      <Li
+        onMouseEnter={() => setShow({ contact: true })}
+        onMouseLeave={() => setShow({ contact: false })}
+      >
+        Contact
+        {show.contact && (
+          <ContactUl>
+            <CareerLi>Contact 01</CareerLi>
+            <CareerLi>Contact 02</CareerLi>
+          </ContactUl>
+        )}
+      </Li>
       <Li>FAQs</Li>
       <Li>404 Error</Li>
     </Ul>
