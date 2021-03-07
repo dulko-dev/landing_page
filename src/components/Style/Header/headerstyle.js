@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { displayImage } from "../keyframes";
+import { displayImage, displayMenuElement } from "../keyframes";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -37,7 +37,6 @@ export const HoverBack = styled.div`
 export const LiStyle = styled.li`
   position: relative;
   padding: 60px 0;
-
   &::before {
     content: "";
     height: 2px;
@@ -80,7 +79,15 @@ export const SpanStyle = styled.span`
 export const HoverPage = styled.div`
   position: absolute;
   bottom: -325px;
-  left: -30px;
-  animation-name: ${displayImage};
+  left: -45px;
+  animation-name: ${displayMenuElement};
+  animation-duration: 0.5s;
+`;
+
+export const HoverShop = styled.div`
+  position: absolute;
+  bottom: -422px;
+  left: -45px;
+  animation-name: ${displayMenuElement};
   animation-duration: 0.5s;
 `;

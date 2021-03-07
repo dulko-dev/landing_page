@@ -22,3 +22,14 @@ to{
   opacity:1;
 }
 `;
+export const displayMenuElement = keyframes`
+from{
+  transform: translateX(10%);
+  opacity:0;
+}
+
+to{
+  transform: translateX(0%),
+  opacity:1;
+}
+`;

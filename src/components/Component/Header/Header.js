@@ -12,15 +12,15 @@ import {
   Logo,
   SpanStyle,
   HoverPage,
+  HoverShop,
 } from "../../Style/Header/headerstyle";
 import Page from "./Page";
-import Blog from "./Blog";
+import Shop from "./Shop";
 
 function Header() {
   const [show, setShow] = useState({
     home: false,
     pages: false,
-    blog: false,
     shop: false,
     element: false,
     portfolio: false,
@@ -77,8 +77,17 @@ function Header() {
               </HoverPage>
             )}
           </LiStyle>
-          <LiStyle>Blog</LiStyle>
-          <LiStyle>Shop</LiStyle>
+          <LiStyle
+            onMouseEnter={() => setShow({ shop: true })}
+            onMouseLeave={() => setShow({ shop: false })}
+          >
+            <SpanStyle>Shop</SpanStyle>
+            {show.shop && (
+              <HoverShop>
+                <Shop />
+              </HoverShop>
+            )}
+          </LiStyle>
           <LiStyle>Elements</LiStyle>
           <LiStyle>Portfolio</LiStyle>
           <li>

@@ -6,8 +6,6 @@ const Ul = styled.ul`
   width: 250px;
   padding: 10px 0;
   background-color: red;
-  animation-name: ${displayImage};
-  animation-duration: 0.5s;
 `;
 
 const Li = styled.li`
