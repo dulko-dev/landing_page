@@ -29,12 +29,17 @@ function FlagCountries({ data }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
-  const handleScroll = () => {
+  const handleScroll = (e) => {
     if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
       setIsLoading(true);
     }
+    
     return;
   };
+  
+// console.log('innerh', window.innerHeight)
+// console.log('scrollY', window.scrollY)
+// console.log('scrollH', document.body.scrollHeight)
 
   const getMoreData = () => {
     if (current.length === data.length) {
@@ -54,13 +59,13 @@ function FlagCountries({ data }) {
   };
 
   return (
-    <UlStyle>
+    <UlStyle id='style-ui'>
       {current.map((flag) => (
         <LiStyle key={flag.name}>
           <ImageEffect>
             <ImageFlag src={flag.flag} />
           </ImageEffect>
-            <Title>{flag.name}</Title>
+          <Title>{flag.name}</Title>
         </LiStyle>
       ))}
       {isLoading && (

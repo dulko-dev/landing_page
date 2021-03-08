@@ -13,9 +13,11 @@ import {
   SpanStyle,
   HoverPage,
   HoverShop,
+  HoverElement,
 } from "../../Style/Header/headerstyle";
 import Page from "./Page";
 import Shop from "./Shop";
+import Element from "./Element";
 
 function Header() {
   const [show, setShow] = useState({
@@ -62,6 +64,14 @@ function Header() {
             onMouseLeave={() => setShow({ home: false })}
           >
             <SpanStyle>Home</SpanStyle>
+            {show.home && (
+              <HoverBack
+                onMouseLeave={() => setShow({ home: false })}
+                onMouseEnter={() => setShow({ home: true })}
+              >
+                <FlagCountries data={data} />
+              </HoverBack>
+            )}
           </LiStyle>
           <LiStyle
             onMouseEnter={() => setShow({ pages: true })}
@@ -88,21 +98,23 @@ function Header() {
               </HoverShop>
             )}
           </LiStyle>
-          <LiStyle>Elements</LiStyle>
+          <LiStyle
+            onMouseEnter={() => setShow({ element: true })}
+            onMouseLeave={() => setShow({ element: false })}
+          >
+            <SpanStyle>Elements</SpanStyle>
+            {show.element && (
+              <HoverElement>
+                <Element />
+              </HoverElement>
+            )}
+          </LiStyle>
           <LiStyle>Portfolio</LiStyle>
           <li>
             <i className="fas fa-search-plus"></i>
           </li>
         </Ul>
       </Wrapper>
-      {show.home && (
-        <HoverBack
-          onMouseLeave={() => setShow({ home: false })}
-          onMouseEnter={() => setShow({ home: true })}
-        >
-          <FlagCountries data={data} />
-        </HoverBack>
-      )}
     </NavSite>
   );
 }

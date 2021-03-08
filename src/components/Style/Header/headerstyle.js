@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import { displayImage, displayMenuElement } from "../keyframes";
 
+export const NavSite = styled.div`
+  position: sticky;
+  top: 0;
+  width: 100%;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
+  background-color: white;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  border: 1px solid black;
   max-width: 1200px;
   max-height: 100px;
-`;
-
-export const NavSite = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 export const ButtonStyle = styled.button`
@@ -25,13 +28,6 @@ export const Ul = styled.ul`
   width: 500px;
   display: flex;
   justify-content: space-around;
-`;
-
-export const HoverBack = styled.div`
-  position: relative;
-  background-color: red;
-  animation-name: ${displayImage};
-  animation-duration: 0.5s;
 `;
 
 export const LiStyle = styled.li`
@@ -76,6 +72,18 @@ export const SpanStyle = styled.span`
   cursor: pointer;
 `;
 
+export const HoverBack = styled.div`
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 102px;
+  background-color: red;
+  overflow: auto;
+  animation-name: ${displayImage};
+  animation-duration: 0.5s;
+`;
+
 export const HoverPage = styled.div`
   position: absolute;
   bottom: -325px;
@@ -89,5 +97,15 @@ export const HoverShop = styled.div`
   bottom: -422px;
   left: -45px;
   animation-name: ${displayMenuElement};
+  animation-duration: 0.5s;
+`;
+
+export const HoverElement = styled.div`
+  position: fixed;
+  top: 102px;
+  left: 0;
+  width: 100%;
+  background-color: blue;
+  animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;
