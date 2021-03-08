@@ -92,12 +92,8 @@ export const HoverPage = styled.div`
   animation-duration: 0.5s;
 `;
 
-export const HoverShop = styled.div`
-  position: absolute;
+export const HoverShop = styled(HoverPage)`
   bottom: -422px;
-  left: -45px;
-  animation-name: ${displayMenuElement};
-  animation-duration: 0.5s;
 `;
 
 export const HoverElement = styled.div`
@@ -108,4 +104,8 @@ export const HoverElement = styled.div`
   background-color: blue;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
+`;
+
+export const HoverPortfolio = styled(HoverPage)`
+  bottom: -117px;
 `;

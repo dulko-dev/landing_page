@@ -14,10 +14,12 @@ import {
   HoverPage,
   HoverShop,
   HoverElement,
+  HoverPortfolio
 } from "../../Style/Header/headerstyle";
 import Page from "./Page";
 import Shop from "./Shop";
 import Element from "./Element";
+import Portfolio from "./Portfolio";
 
 function Header() {
   const [show, setShow] = useState({
@@ -109,7 +111,17 @@ function Header() {
               </HoverElement>
             )}
           </LiStyle>
-          <LiStyle>Portfolio</LiStyle>
+          <LiStyle
+            onMouseEnter={() => setShow({ portfolio: true })}
+            onMouseLeave={() => setShow({ portfolio: false })}
+          >
+            <SpanStyle>Portfolio </SpanStyle>
+            {show.portfolio && (
+              <HoverPortfolio>
+                <Portfolio />
+              </HoverPortfolio>
+            )}
+          </LiStyle>
           <li>
             <i className="fas fa-search-plus"></i>
           </li>
