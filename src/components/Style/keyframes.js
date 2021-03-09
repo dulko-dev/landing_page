@@ -33,3 +33,30 @@ to{
   opacity:1;
 }
 `;
+
+export const moveZoom = keyframes`
+0%{
+  transform: translateY(150%);
+}
+
+20%{
+  transform: translateX(0%) scale(1);
+}
+
+40%{ 
+  transform: scale(0.4);
+
+}
+100%{
+  transform: scale(50);
+}
+`;
+
+export const searchInput = keyframes`
+from{
+  opacity: 0;
+}
+to{
+opacity:1;
+}
+`;

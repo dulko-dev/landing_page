@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import Page from "./Page";
+import Shop from "./Shop";
+import Element from "./Element";
+import Portfolio from "./Portfolio";
 import FlagCountries from "./FlagCountries";
 import logo from "../../../assets/header/logo.svg";
-import { getFlag } from "../../Tools/axios";
+
 import {
   Wrapper,
   NavSite,
@@ -14,12 +19,15 @@ import {
   HoverPage,
   HoverShop,
   HoverElement,
-  HoverPortfolio
+  HoverPortfolio,
+  LiStyleZoom,
+  Module,
+  Input,
+  ModuleSearch,
+  SearchIcon,
+  ExitIcon,
+  BlockBeforeAnimated,
 } from "../../Style/Header/headerstyle";
-import Page from "./Page";
-import Shop from "./Shop";
-import Element from "./Element";
-import Portfolio from "./Portfolio";
 
 function Header() {
   const [show, setShow] = useState({
@@ -28,30 +36,43 @@ function Header() {
     shop: false,
     element: false,
     portfolio: false,
+    zoom: false,
   });
   const [data, setData] = useState([]);
+
+  const searchRef = useRef();
+  const FLAGS_URL = "https://restcountries.eu/rest/v2/all";
 
   useEffect(() => {
     const abortControl = new AbortController();
     const signal = abortControl.signal;
-    getFlag(signal)
-      .then((res) => {
-        if (res.status === 200) {
-          return setData(res.data);
-        }
-      })
-      .catch((err) => {
-        if (err.name === "AbortError") {
-          console.log("axios aborted");
-        } else {
-          console.log(err);
-        }
-      });
+
+    const getFlag = async () => {
+      await axios
+        .get(FLAGS_URL, { signal: signal })
+        .then((res) => {
+          if (res.status === 200) {
+            return setData(res.data);
+          }
+        })
+        .catch((err) => {
+          if (err.name === "AbortError") {
+            console.log("axios aborted");
+          } else {
+            console.log(err);
+          }
+        });
+    };
+    getFlag();
 
     return () => {
       abortControl.abort();
     };
   }, []);
+
+  useEffect(() => {
+    searchRef.current && searchRef.current.focus();
+  }, [show.zoom]);
 
   return (
     <NavSite>
@@ -122,11 +143,27 @@ function Header() {
               </HoverPortfolio>
             )}
           </LiStyle>
-          <li>
-            <i className="fas fa-search-plus"></i>
-          </li>
+          <LiStyleZoom>
+            <i
+              className="fas fa-search-plus"
+              onClick={() => setShow({ zoom: true })}
+            ></i>
+          </LiStyleZoom>
         </Ul>
       </Wrapper>
+      {show.zoom && (
+        <BlockBeforeAnimated>
+          <Module></Module>
+          <ModuleSearch>
+            <Input type="text" placeholder="Search here" ref={searchRef} />
+            <SearchIcon className="fas fa-search fa-lg"></SearchIcon>
+          </ModuleSearch>
+          <ExitIcon
+            className="fas fa-times fa-lg"
+            onClick={() => setShow({ zoom: false })}
+          ></ExitIcon>
+        </BlockBeforeAnimated>
+      )}
     </NavSite>
   );
 }
