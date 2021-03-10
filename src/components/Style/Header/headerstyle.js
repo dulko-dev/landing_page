@@ -14,19 +14,12 @@ export const NavSite = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  background-color: white;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid black;
-  max-width: 1200px;
-  max-height: 100px;
-`;
 
-export const ButtonStyle = styled.button`
-  border: none;
-  padding: 0;
-  background-color: white;
+  max-width: 1400px;
+  max-height: 100px;
 `;
 
 export const Ul = styled.ul`
@@ -38,10 +31,12 @@ export const Ul = styled.ul`
 export const LiStyle = styled.li`
   position: relative;
   padding: 60px 0;
+  color: whitesmoke;
+
   &::before {
     content: "";
     height: 2px;
-    background-color: black;
+    background-color: #ffffff;
     display: inline-block;
     position: absolute;
     bottom: 55px;
@@ -55,7 +50,7 @@ export const LiStyle = styled.li`
   &::after {
     content: "";
     height: 2px;
-    background-color: black;
+    background-color: #ffffff;
     display: inline-block;
     position: absolute;
     bottom: 55px;
@@ -72,6 +67,7 @@ export const LiStyleZoom = styled.li`
   position: relative;
   padding: 60px 0;
   cursor: pointer;
+  color: whitesmoke;
 `;
 
 export const BlockBeforeAnimated = styled.div`
@@ -143,7 +139,7 @@ export const Input = styled.input`
 `;
 
 export const Logo = styled.img`
-  width: 200px;
+  width: 150px;
   height: 100px;
 `;
 
@@ -157,16 +153,20 @@ export const HoverBack = styled.div`
   width: 100%;
   left: 0;
   top: 102px;
-  background-color: red;
+  background-color: #ffffff;
   overflow: auto;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const HoverPage = styled.div`
   position: absolute;
   bottom: -324px;
   left: -45px;
+  background-color: #ffffff;
   animation-name: ${displayMenuElement};
   animation-duration: 0.5s;
 `;
@@ -176,11 +176,12 @@ export const HoverShop = styled(HoverPage)`
 `;
 
 export const HoverElement = styled.div`
+  color: #2a2d34;
   position: fixed;
   top: 102px;
   left: 0;
   width: 100%;
-  background-color: blue;
+  background-color: #ffffff;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;

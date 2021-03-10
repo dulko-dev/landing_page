@@ -23,7 +23,7 @@ const Li = styled.li`
   padding: 5px 0;
   &:hover {
     cursor: pointer;
-    font-weight: bold;
+    color: #613DC1;
   }
 `;
 

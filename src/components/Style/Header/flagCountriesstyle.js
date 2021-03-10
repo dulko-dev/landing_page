@@ -8,19 +8,19 @@ export const ImageFlag = styled.img`
 
 export const ImageEffect = styled.div`
   position: relative;
-  overflow: hidden;
   width: 300px;
   height: 200px;
+  overflow:hidden;
   &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -80px;
+    left: -70px;
     width: 50px;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.3);
-    transform: skewX(-15deg);
+    transform: skewX(-10deg);
     transition: all ease 0.4s;
   }
   &::after {
@@ -54,7 +54,7 @@ export const UlStyle = styled.ul`
   justify-content: space-between;
   padding-top: 15px;
   flex-wrap: wrap;
-  margin-right: 20px;
+  color: #2a2d34;
 `;
 
 export const Waiting = styled.div`
@@ -65,4 +65,3 @@ export const Waiting = styled.div`
   width: 200px;
   height: 200px;
 `;
-

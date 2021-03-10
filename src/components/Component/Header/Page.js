@@ -5,7 +5,7 @@ import { displayImage } from "../../Style/keyframes";
 const Ul = styled.ul`
   width: 250px;
   padding: 10px 0;
-  background-color: red;
+  color: #2a2d34;
 `;
 
 const Li = styled.li`
@@ -22,8 +22,8 @@ const Li = styled.li`
     right: 20px;
   }
   &:hover {
-    color: violet;
-    transition: 0.4s;
+    color: #613DC1;
+    transition: 0.2s;
     cursor: pointer;
   }
 `;
@@ -31,7 +31,7 @@ const CareerUl = styled.ul`
   position: absolute;
   right: -160px;
   top: 0;
-  background-color: red;
+  background-color: #ffffff;
   animation-name: ${displayImage};
   animation-duration: 0.5s;
 `;
@@ -50,9 +50,9 @@ const CareerLi = styled.li`
   width: 130px;
   padding: 0 20px;
   margin: 10px 0;
-  color: black;
+  color: #2a2d34;
   &:hover {
-    color: violet;
+    color: #613DC1;
   }
 `;
 

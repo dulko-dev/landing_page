@@ -5,12 +5,11 @@ import Shop from "./Shop";
 import Element from "./Element";
 import Portfolio from "./Portfolio";
 import FlagCountries from "./FlagCountries";
-import logo from "../../../assets/header/logo.svg";
+import logo from "../../../assets/header/logo2.png";
 
 import {
   Wrapper,
   NavSite,
-  ButtonStyle,
   Ul,
   HoverBack,
   LiStyle,
@@ -77,10 +76,9 @@ function Header() {
   return (
     <NavSite>
       <Wrapper>
-        <ButtonStyle>
-          <Logo src={logo} onClick={() => (window.location.href = "#")} />
-        </ButtonStyle>
-
+        <a style={{ outline: "0" }} href="/#">
+          <Logo src={logo} />
+        </a>
         <Ul>
           <LiStyle
             onMouseEnter={() => setShow({ home: true })}

@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 const UlStyle = styled.ul`
   width: 300px;
+  color: #2a2d34;
 `;
 
 const LiStyle = styled.li`
   display: grid;
-  background-color: blue;
+  background-color: #ffffff;
   grid-template-columns: minmax(30%, auto);
   grid-template-rows: minmax(40%, auto);
   padding: 20px 0;
@@ -23,8 +24,10 @@ const LiI = styled.i`
   grid-column: 1/2;
   grid-row: 1/3;
   justify-self: center;
+  color: #613dc1;
 `;
 const LiH = styled.h3`
+  font-weight: 600;
   grid-column: 2/3;
   grid-row: 1/2;
   align-self: start;

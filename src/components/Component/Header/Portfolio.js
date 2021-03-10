@@ -5,7 +5,8 @@ import { displayImage } from "../../Style/keyframes";
 const Ul = styled.ul`
   width: 180px;
   padding: 15px 0;
-  background-color: brown;
+  background-color: #ffffff;
+  color: #2a2d34;
 `;
 
 const Li = styled.li`
@@ -19,7 +20,7 @@ const Li = styled.li`
     right: 20px;
   }
   &:hover {
-    font-weight: bold;
+    color: #613dc1;
   }
 `;
 
@@ -30,16 +31,17 @@ const UlSecond = styled.ul`
   padding: 15px 0;
   position: absolute;
   left: -190px;
-  background-color: brown;
+  background-color: #ffffff;
   top: 0;
 `;
 
 const LiSecond = styled.li`
   padding: 5px 20px;
+  color: #2a2d34;
   cursor: pointer;
   font-weight: normal;
   &:hover {
-    font-weight: bold;
+    color: #613dc1;
   }
 `;
 
