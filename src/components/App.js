@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./Component/Header/Header";
-import Test from "./Test";
 import Nav from "./Component/Nav/Nav";
 import BackgroundImg from "./Component/BackgroundImg";
+import Section1 from "./Component/Section/Section1";
 
 const AppStyle = styled.div`
 `;
@@ -11,10 +11,10 @@ const AppStyle = styled.div`
 function App() {
   return (
     <AppStyle>
-      <Header />
       <BackgroundImg />
+      <Header />
       <Nav />
-      <Test />
+      <Section1 />
     </AppStyle>
   );
 }

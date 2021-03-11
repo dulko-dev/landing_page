@@ -1,31 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-
-const ElementWrapper = styled.div`
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-`;
-
-const EachColumn = styled.div`
-  padding: 30px 0;
-`;
-
-const H2Style = styled.h2`
-  font-weight: 600;
-  text-transform: uppercase;
-  padding-bottom: 10px;
-`;
-
-const Li = styled.li`
-  padding: 5px 0;
-  &:hover {
-    cursor: pointer;
-    color: #613DC1;
-  }
-`;
+import {
+  ElementWrapper,
+  EachColumn,
+  H2Style,
+  Li,
+} from "../../Style/Header/elementstyle";
 
 function Element() {
   return (
