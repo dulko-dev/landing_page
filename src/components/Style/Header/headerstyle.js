@@ -17,7 +17,6 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-
   max-width: 1400px;
   max-height: 100px;
 `;
@@ -28,11 +27,10 @@ export const Ul = styled.ul`
   justify-content: space-around;
 `;
 
+
 export const LiStyle = styled.li`
   position: relative;
   padding: 60px 0;
-  color: whitesmoke;
-
   &::before {
     content: "";
     height: 2px;
@@ -67,7 +65,6 @@ export const LiStyleZoom = styled.li`
   position: relative;
   padding: 60px 0;
   cursor: pointer;
-  color: whitesmoke;
 `;
 
 export const BlockBeforeAnimated = styled.div`
@@ -86,7 +83,7 @@ export const Module = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   animation-name: ${moveZoom};
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -152,7 +149,7 @@ export const HoverBack = styled.div`
   position: fixed;
   width: 100%;
   left: 0;
-  top: 102px;
+  top: 100px;
   background-color: #ffffff;
   overflow: auto;
   animation-name: ${displayImage};
@@ -164,7 +161,7 @@ export const HoverBack = styled.div`
 
 export const HoverPage = styled.div`
   position: absolute;
-  bottom: -324px;
+  bottom: -323px;
   left: -45px;
   background-color: #ffffff;
   animation-name: ${displayMenuElement};
@@ -172,13 +169,13 @@ export const HoverPage = styled.div`
 `;
 
 export const HoverShop = styled(HoverPage)`
-  bottom: -422px;
+  bottom: -421px;
 `;
 
 export const HoverElement = styled.div`
   color: #2a2d34;
   position: fixed;
-  top: 102px;
+  top: 100px;
   left: 0;
   width: 100%;
   background-color: #ffffff;
@@ -187,5 +184,5 @@ export const HoverElement = styled.div`
 `;
 
 export const HoverPortfolio = styled(HoverPage)`
-  bottom: -116px;
+  bottom: -115px;
 `;

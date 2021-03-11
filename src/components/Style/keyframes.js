@@ -60,3 +60,12 @@ to{
 opacity:1;
 }
 `;
+
+export const movePlanet = keyframes`
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+`;

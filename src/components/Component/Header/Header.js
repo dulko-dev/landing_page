@@ -28,6 +28,7 @@ import {
   BlockBeforeAnimated,
 } from "../../Style/Header/headerstyle";
 
+
 function Header() {
   const [show, setShow] = useState({
     home: false,
@@ -38,6 +39,7 @@ function Header() {
     zoom: false,
   });
   const [data, setData] = useState([]);
+  const [topScroll, setTopScroll] = useState(false);
 
   const searchRef = useRef();
   const FLAGS_URL = "https://restcountries.eu/rest/v2/all";
@@ -72,15 +74,30 @@ function Header() {
   useEffect(() => {
     searchRef.current && searchRef.current.focus();
   }, [show.zoom]);
+  
+  const changeColor = () => {
+    if(document.scrollingElement.scrollTop > 50){
+      setTopScroll(true);
+    } else{
+      setTopScroll(false);
+    }
+  }
+  
+useEffect(() => {
+document.addEventListener('scroll', changeColor);
+return () => document.removeEventListener('scroll', changeColor)
+},[topScroll])
+
+
 
   return (
-    <NavSite>
+    <NavSite style={{backgroundColor: topScroll ? 'whitesmoke' : 'inherit', transition: 'all 0.5s ease' }}>
       <Wrapper>
         <a style={{ outline: "0" }} href="/#">
           <Logo src={logo} />
         </a>
-        <Ul>
-          <LiStyle
+        <Ul style={{color: topScroll ? '#2a2d34' : 'whitesmoke' }}>
+          <LiStyle 
             onMouseEnter={() => setShow({ home: true })}
             onMouseLeave={() => setShow({ home: false })}
           >
