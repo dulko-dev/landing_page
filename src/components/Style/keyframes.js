@@ -69,3 +69,14 @@ to{
 transform:rotate(360deg);
 }
 `;
+
+export const section2 = keyframes`
+from{
+transform:translateX(-20px);
+opacity:0;
+}
+to{
+  transform:translateY(0);
+  opacity:1;
+}
+`;
