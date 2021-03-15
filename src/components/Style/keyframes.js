@@ -72,11 +72,42 @@ transform:rotate(360deg);
 
 export const section2 = keyframes`
 from{
-transform:translateX(-20px);
+transform:translateY(20px);
 opacity:0;
+visibility:visible;
 }
 to{
   transform:translateY(0);
   opacity:1;
+visibility:visible;
+}
+`;
+export const section2Comment = keyframes`
+from{
+transform:translateX(-50px);
+opacity:0;
+visibility:visible;
+}
+to{
+  transform:translateX(0%);
+  opacity:1;
+visibility:visible;
+
+}
+`;
+
+export const sectionChart = keyframes`
+from{
+  transform: translateX(30%);
+  opacity:0;
+  visibility:visible;
+
+}
+
+to{
+  transform: translateX(0%),
+  opacity:1;
+  visibility:visible;
+
 }
 `;
