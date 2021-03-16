@@ -1,141 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled, { css } from "styled-components";
 import redLabel from "../../../assets/Section2/analytices3.png";
 import table from "../../../assets/Section2/analytices4.png";
 import chart from "../../../assets/Section2/analytices2.png";
 import comment from "../../../assets/Section2/analytices1.png";
-import { section2, section2Comment,sectionChart } from "../../Style/keyframes";
-
-const Section = styled.div`
-  width: 100%;
-  height: 100vh;
-`;
-const Content = styled.div`
-  font-family: var(--textTitle);
-  padding-top:150px;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-`;
-const LeftBox = styled.div`
-  z-index: -1;
-  position: relative;
-  width: 100%;
-`;
-
-const RightBox = styled.div`
-  z-index: -1;
-  position: relative;
-  width: 100%;
-`;
-
-const Image = styled.img`
-  position: absolute;
-  visibility: hidden;
-  left: ${(props) => props.left};
-  top: ${(props) => props.top};
-  bottom: ${(props) => props.bottom};
-  right: ${(props) => props.bottom};
-  transform: ${(props) => props.transform};
-  z-index: ${(props) => props.index};
-  ${({ visible }) =>
-    visible &&
-    css`
-      animation-name: ${section2};
-      animation-duration: 3s;
-      animation-fill-mode: forwards;
-    `}
-  ${({ visibleComment }) =>
-    visibleComment &&
-    css`
-      animation-name: ${section2Comment};
-      animation-duration: 2s;
-      animation-delay: 0.3s;
-      animation-fill-mode: forwards;
-    `}
-  ${({ visibleChart }) =>
-    visibleChart &&
-    css`
-      animation-name: ${sectionChart};
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    `}
-`;
-
-const Title = styled.div`
-  font-size: 2.4em;
-  line-height: 1.2em;
-  padding-bottom: 60px;
-  visibility: hidden;
-  ${({ visible }) =>
-    visible &&
-    css`
-      animation-name: ${section2};
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    `}
-`;
-const Text = styled.div`
-  position: relative;
-  z-index: -1;
-  line-height: 1.5em;
-  color: #8a8e91;
-  font-size: 1.1em;
-  padding-bottom: 60px;
-  visibility: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(138, 142, 145, 0.3);
-  }
-  ${({ visible }) =>
-    visible &&
-    css`
-      animation-name: ${section2};
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    `}
-`;
-const Li = styled.li`
-  width: 85%;
-  line-height: 1.5em;
-  color: #8a8e91;
-  padding-bottom: 30px;
-  padding-left: 1em;
-  visibility: hidden;
-  &::before {
-    content: "•";
-    color: green;
-    font-weight: bolder;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-  ${({ visible }) =>
-    visible &&
-    css`
-      animation-name: ${section2};
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    `}
-  ${({ visibleDelay }) =>
-    visibleDelay &&
-    css`
-      animation-name: ${section2};
-      animation-duration: 2s;
-      animation-delay: 0.7s;
-      animation-fill-mode: forwards;
-    `}
-`;
-
-const Span = styled.span`
-  font-weight: 600;
-`;
+import {
+  Section,
+  Content,
+  LeftBox,
+  RightBox,
+  Title,
+  Image,
+  Text,
+  Li,
+  Span,
+} from "../../Style/Section/section2style";
 
 function Section2() {
   const [visible, setVisible] = useState(false);
@@ -235,7 +113,14 @@ function Section2() {
             ref={thirdRef}
             visibleComment={thirdVisible}
           />
-          <Image src={chart} alt="chart" bottom="20px" left="0" ref={fourthRef} visibleChart={fourthVisible}  />
+          <Image
+            src={chart}
+            alt="chart"
+            bottom="20px"
+            left="0"
+            ref={fourthRef}
+            visibleChart={fourthVisible}
+          />
         </LeftBox>
         <RightBox>
           <Title visible={visible} ref={firstRef}>

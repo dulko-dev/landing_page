@@ -55,9 +55,13 @@ export const moveZoom = keyframes`
 export const searchInput = keyframes`
 from{
   opacity: 0;
+visibility:visible;
+
 }
 to{
 opacity:1;
+visibility:visible;
+
 }
 `;
 
@@ -109,5 +113,18 @@ to{
   opacity:1;
   visibility:visible;
 
+}
+`;
+
+export const section3 = keyframes`
+from{
+transform:translateY(-20px);
+opacity:0;
+visibility:visible;
+}
+to{
+  transform:translateY(0);
+  opacity:1;
+visibility:visible;
 }
 `;

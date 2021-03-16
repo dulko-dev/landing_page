@@ -37,7 +37,9 @@ function Nav() {
             Loo car boot bodge smashing I up the duff horse play give us a bell,
             William bugger all mate happy days.!
           </Text>
-          <Button>Try for Free</Button>
+          <Button type="button" onClick={() => (window.location.href = "/#")}>
+            Try for Free
+          </Button>
           <ImgDiv2SmallBalls>
             <Img5 src={img5} alt="small planet" />
             <Img6 src={img6} alt="small planet" />
