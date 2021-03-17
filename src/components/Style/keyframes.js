@@ -6,7 +6,7 @@ from{
   opacity: 0
 }
 to{
-  transform:translateX(0%);
+  transform:translateY(0%);
   opacity:1
 }
 `;
@@ -96,7 +96,6 @@ to{
   transform:translateX(0%);
   opacity:1;
 visibility:visible;
-
 }
 `;
 

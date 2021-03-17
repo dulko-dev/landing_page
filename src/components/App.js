@@ -7,9 +7,9 @@ import Section1 from "./Component/Section/Section1";
 import Section2 from "./Component/Section/Section2";
 import Section3 from "./Component/Section/Section3";
 import Banner from "./Component/Banner/Banner";
+import Step from "./Component/Step/Step";
 
-const AppStyle = styled.div`
-`;
+const AppStyle = styled.div``;
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <Section2 />
       <Section3 />
       <Banner />
+      <Step />
     </AppStyle>
   );
 }
