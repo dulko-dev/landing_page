@@ -9,7 +9,7 @@ import {
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 export const Content = styled.div`
@@ -22,7 +22,6 @@ export const Content = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  position: relative;
   width: 100%;
 `;
 
@@ -178,7 +177,7 @@ export const ListTitle = styled.h3`
 export const Button = styled.button`
   visibility: hidden;
   display: block;
-  margin: 200px auto 0 auto;
+  margin: 200px auto 100px auto;
   padding: 15px 30px;
   border-color: blue;
   border-radius: 25px;

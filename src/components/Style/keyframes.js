@@ -128,3 +128,14 @@ to{
 visibility:visible;
 }
 `;
+
+export const animatedButton = keyframes`
+0%{
+  padding:40px;
+}
+100%{
+  padding:80px;
+  opacity:0;
+}
+
+`;
