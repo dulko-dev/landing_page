@@ -36,7 +36,6 @@ const Image = styled.img`
   margin-right: 100px;
 `;
 const RightBox = styled.div`
-  font-family: var(--textTitle);
   color: #ffffff;
   width: 50%;
 `;

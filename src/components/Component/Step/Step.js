@@ -11,12 +11,12 @@ const StepStyle = styled.div`
 const Wrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
-  font-family: var(--textTitle);
+  
 `;
 const Title = styled.h3`
   text-align: center;
   padding-top: 150px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   font-size: 2.3em;
   line-height: 1.3;
 `;

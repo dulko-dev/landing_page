@@ -17,7 +17,7 @@ export const Section = styled.div`
 `;
 
 export const Content = styled.div`
-  font-family: var(--textTitle);
+
   position: relative;
   padding-top: 150px;
   max-width: 1400px;

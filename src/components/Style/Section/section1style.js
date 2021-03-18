@@ -19,7 +19,7 @@ export const Main = styled.div`
 `;
 export const Text = styled.div`
   grid-area: text;
-  font-family: var(--textTitle);
+ 
 
 `;
 export const Title = styled.div`

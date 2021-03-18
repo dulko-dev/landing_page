@@ -14,7 +14,7 @@ export const Section = styled.div`
 
 export const Content = styled.div`
   padding-top: 50px;
-  font-family: var(--textTitle);
+
   max-width: 1400px;
   margin: 0 auto;
   display: flex;

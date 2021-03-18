@@ -16,7 +16,6 @@ export const WrappBoxes = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  font-family: var(--textTitle);
   color: #fff;
   max-width: 700px;
   padding-right: 20px;
