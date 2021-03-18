@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { searchInput } from "../../Style/keyframes";
 
 const SubscribStyle = styled.div`
   width: 100%;
@@ -29,9 +30,10 @@ const Text = styled.p`
   line-height: 1.5;
 `;
 const WrapperBox = styled.div`
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   justify-content: center;
+  height: 460px;
 `;
 const LeftBox = styled.div`
   flex-basis: 33%;
@@ -40,9 +42,11 @@ const LeftBox = styled.div`
   box-sizing: border-box;
   margin-right: 50px;
   transition: all 0.2s linear;
+  filter: grayscale(100%);
   &:hover {
     box-shadow: 0 40px 80px 0 rgb(1 1 64 / 8%);
     transform: scale(1.1);
+    filter: grayscale(0%);
   }
 `;
 
@@ -51,8 +55,9 @@ const RightBox = styled(LeftBox)``;
 
 const TextBox = styled.p`
   text-align: center;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 `;
+
 const TitleBox = styled.h3`
   position: relative;
   text-align: center;
@@ -66,6 +71,26 @@ const TitleBox = styled.h3`
     right: 15%;
     background-color: rgba(138, 142, 145, 0.3);
     height: 1px;
+  }
+`;
+
+const Popular = styled.p`
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  font-size: 0.8em;
+  color: green;
+  padding-bottom: 20px;
+  &::before {
+    content: "\f06d";
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    left: 0;
+    width: 10px;
+    height: 10px;
+    color: green;
+    font-weight: 600;
   }
 `;
 const SpanTitleBox = styled.span`
@@ -111,20 +136,28 @@ const ListBox = styled.li`
 
 const BtnBox = styled.button`
   display: block;
-  margin: 30px auto;
+  margin: 30px auto 0 auto;
   padding: 15px 45px;
   background-color: #4e78f4;
   border-radius: 25px;
   border: 1px solid #4e78f4;
   color: #ffff;
+  transition: all 0.3s linear;
+  animation-name: ${searchInput};
+  animation-duration: 0.4s;
+
   &:hover {
     background-color: inherit;
-    transition: all 0.3s linear;
     color: #4e78f4;
   }
 `;
-
 function Subscribe() {
+  const [show, setShow] = useState({
+    firstBox: false,
+    secondBox: false,
+    thirdBox: false,
+  });
+
   return (
     <SubscribStyle>
       <Wrapper>
@@ -137,7 +170,10 @@ function Subscribe() {
           spiffing crikey Why gormless, pear shaped.!
         </Text>
         <WrapperBox>
-          <LeftBox>
+          <LeftBox
+            onMouseEnter={() => setShow({ firstBox: true })}
+            onMouseLeave={() => setShow({ firstBox: false })}
+          >
             <TextBox>Starter</TextBox>
             <TitleBox>
               <SpanTitleBox>$59.99</SpanTitleBox>Per month
@@ -149,12 +185,20 @@ function Subscribe() {
               <ListBox>logo from emails</ListBox>
               <ListBox>Advanced statistics</ListBox>
             </Ul>
-            <BtnBox>Start Free Month</BtnBox>
+            {show.firstBox && (
+              <BtnBox onClick={() => (window.location.href = "/#")}>
+                Start Free Month
+              </BtnBox>
+            )}
           </LeftBox>
-          <MiddleBox>
-            <TextBox>Starter</TextBox>
+          <MiddleBox
+            onMouseEnter={() => setShow({ secondBox: true })}
+            onMouseLeave={() => setShow({ secondBox: false })}
+          >
+            <TextBox>Professional</TextBox>
+            <Popular>Most Popular</Popular>
             <TitleBox>
-              <SpanTitleBox>$59.99</SpanTitleBox>Per month
+              <SpanTitleBox>$99.99</SpanTitleBox>Per month
             </TitleBox>
             <Ul>
               <ListBox>All Lite features</ListBox>
@@ -163,11 +207,19 @@ function Subscribe() {
               <ListBox>logo from emails</ListBox>
               <ListBox>Advanced statistics</ListBox>
             </Ul>
+            {show.secondBox && (
+              <BtnBox onClick={() => (window.location.href = "/#")}>
+                Start Free Month
+              </BtnBox>
+            )}
           </MiddleBox>
-          <RightBox>
-            <TextBox>Starter</TextBox>
+          <RightBox
+            onMouseEnter={() => setShow({ thirdBox: true })}
+            onMouseLeave={() => setShow({ thirdBox: false })}
+          >
+            <TextBox>Expert</TextBox>
             <TitleBox>
-              <SpanTitleBox>$59.99</SpanTitleBox>Per month
+              <SpanTitleBox>$199.99</SpanTitleBox>Per month
             </TitleBox>
             <Ul>
               <ListBox>All Lite features</ListBox>
@@ -176,6 +228,11 @@ function Subscribe() {
               <ListBox>logo from emails</ListBox>
               <ListBox>Advanced statistics</ListBox>
             </Ul>
+            {show.thirdBox && (
+              <BtnBox onClick={() => (window.location.href = "/#")}>
+                Start Free Month
+              </BtnBox>
+            )}
           </RightBox>
         </WrapperBox>
       </Wrapper>
