@@ -9,9 +9,10 @@ import Section3 from "./Component/Section/Section3";
 import Banner from "./Component/Banner/Banner";
 import Step from "./Component/Step/Step";
 import Subscribe from "./Component/Subscribe/Subscribe";
+import BrandSelection from "./Component/BrandSelection/BrandSelection";
 
 const AppStyle = styled.div`
-font-family: var(--textTitle);
+  font-family: var(--textTitle);
 `;
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Banner />
       <Step />
       <Subscribe />
+      <BrandSelection />
     </AppStyle>
   );
 }
