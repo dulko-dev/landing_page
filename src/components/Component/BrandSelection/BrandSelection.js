@@ -18,11 +18,12 @@ const BrandStyle = styled.div`
   width: 100%;
 `;
 const Wrapper = styled.div`
+  padding: 50px 0 100px 0;
   width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 `;
 const LeftBox = styled.div`
   flex-basis: 33%;
@@ -49,7 +50,7 @@ const Button = styled.button`
   padding: 10px 30px;
   color: #fff;
   border: 1px solid transparent;
-  margin-top:30px;
+  margin-top: 30px;
   &:hover {
     border-color: #4e78f4;
     color: #4e78f4;
@@ -73,7 +74,7 @@ const WrapperLogo = styled.div`
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   row-gap: 40px;
-  padding-bottom:40px;
+  padding-bottom: 40px;
 `;
 
 const ImageDisplay = styled.img`

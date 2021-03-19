@@ -10,6 +10,7 @@ import Banner from "./Component/Banner/Banner";
 import Step from "./Component/Step/Step";
 import Subscribe from "./Component/Subscribe/Subscribe";
 import BrandSelection from "./Component/BrandSelection/BrandSelection";
+import Footer from "./Component/Footer/Footer";
 
 const AppStyle = styled.div`
   font-family: var(--textTitle);
@@ -28,6 +29,7 @@ function App() {
       <Step />
       <Subscribe />
       <BrandSelection />
+      <Footer />
     </AppStyle>
   );
 }
