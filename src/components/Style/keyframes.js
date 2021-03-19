@@ -149,3 +149,9 @@ export const animatedButton = keyframes`
 }
 
 `;
+
+export const cloud = keyframes`
+100%{
+  transform:translateX(2200px);
+}
+`;

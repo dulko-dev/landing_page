@@ -3,6 +3,11 @@ import styled from "styled-components";
 import logoBg from "../../../assets/Footer/logo.png";
 import leafLeft from "../../../assets/Footer/leaf-left.png";
 import leafRight from "../../../assets/Footer/leaf-right.png";
+import { ReactComponent as Coding } from "../../../assets/Footer/coding.svg";
+import { ReactComponent as Laptop } from "../../../assets/Footer/laptop.svg";
+import { ReactComponent as Man } from "../../../assets/Footer/man.svg";
+import { ReactComponent as Cloud } from "../../../assets/Footer/cloud.svg";
+import { cloud } from "../../Style/keyframes";
 
 const FooterStyle = styled.div`
   position: relative;
@@ -32,7 +37,7 @@ const BoxNo4 = styled.div`
 `;
 const ImageLogo = styled.img.attrs({
   src: `${logoBg}`,
-  alt:'Hell Yeah', 
+  alt: "Hell Yeah",
 })`
   width: 200px;
   height: 100px;
@@ -80,6 +85,10 @@ const IconStyle = styled.i`
 const Ul = styled.ul``;
 const List = styled.li`
   padding-bottom: 20px;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
 `;
 
 const LeaftL = styled.img.attrs({
@@ -96,6 +105,27 @@ const LeaftR = styled.img.attrs({
   position: absolute;
   right: 0;
   bottom: 0;
+`;
+
+const WallStyle = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #47437e;
+`;
+
+const CloudStyle = styled(Cloud)`
+  position: absolute;
+  bottom: 30%;
+  left: -15%;
+  width: 200px;
+  height: 150px;
+  animation-name: ${cloud};
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 `;
 
 function Footer() {
@@ -157,6 +187,32 @@ function Footer() {
           </Ul>
         </BoxNo4>
       </Wrapper>
+      <Man
+        style={{
+          position: "absolute",
+          bottom: "0",
+          right: "18%",
+          zIndex: "1",
+        }}
+      />
+      <Coding
+        style={{
+          position: "absolute",
+          bottom: "10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      />
+      <Laptop
+        style={{
+          position: "absolute",
+          bottom: "0",
+          left: "12%",
+          zIndex: "1",
+        }}
+      />
+      <CloudStyle />
+      <WallStyle></WallStyle>
       <LeaftL></LeaftL>
       <LeaftR></LeaftR>
     </FooterStyle>
