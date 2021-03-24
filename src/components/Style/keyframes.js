@@ -147,11 +147,25 @@ export const animatedButton = keyframes`
   padding:80px;
   opacity:0;
 }
-
 `;
 
-export const cloud = keyframes`
-100%{
-  transform:translateX(2200px);
+export const sunMove = keyframes`
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(20px);
+
+}
+
+`;
+export const cloudMove = keyframes`
+0%,100%{
+transform-origin:center;
+transform:rotate(-5deg);
+}
+50%{
+transform-origin:center;
+transform:rotate(5deg);
 }
 `;

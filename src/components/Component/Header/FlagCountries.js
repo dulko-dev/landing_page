@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import roller from "../../../assets/header/loading.gif";
 import {
   LiStyle,
@@ -7,6 +7,7 @@ import {
   Waiting,
   ImageFlag,
   ImageEffect,
+  EndText,
 } from "../../Style/Header/flagCountriesstyle";
 
 function FlagCountries({ data }) {
@@ -18,48 +19,57 @@ function FlagCountries({ data }) {
   const [current, setCurrent] = useState(data.slice(count.prev, count.next));
   const [endFetch, setEndFetch] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
-  }, []);
+  const userRef = useRef(null);
 
   useEffect(() => {
     if (!isLoading) return;
+    let idTimeout;
+
+    const getMoreData = () => {
+      if (current.length === data.length) {
+        setIsLoading(false);
+        setEndFetch(true);
+        return;
+      }
+      idTimeout = setTimeout(() => {
+        setCurrent(
+          current.concat(data.slice(count.prev + 20, count.next + 20))
+        );
+        setCount((prevState) => ({
+          prev: prevState.prev + 20,
+          next: prevState.next + 20,
+        }));
+        setIsLoading(false);
+      }, 1000);
+    };
     getMoreData();
+    return () => {
+      clearTimeout(idTimeout);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
-  const handleScroll = (e) => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-      setIsLoading(true);
+  useEffect(() => {
+    const user = userRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsLoading(entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 1.0 }
+    );
+    if (user) {
+      observer.observe(user);
+    } else {
+      observer.disconnect(user);
     }
-    
-    return;
-  };
-  
-// console.log('innerh', window.innerHeight)
-// console.log('scrollY', window.scrollY)
-// console.log('scrollH', document.body.scrollHeight)
-
-  const getMoreData = () => {
-    if (current.length === data.length) {
-      setIsLoading(false);
-      setEndFetch(true);
-      return;
-    }
-
-    setTimeout(() => {
-      setCurrent(current.concat(data.slice(count.prev + 20, count.next + 20)));
-      setCount((prevState) => ({
-        prev: prevState.prev + 20,
-        next: prevState.next + 20,
-      }));
-      setIsLoading(false);
-    }, 1000);
-  };
+  }, []);
 
   return (
-    <UlStyle id='style-ui'>
+    <UlStyle>
       {current.map((flag) => (
         <LiStyle key={flag.name}>
           <ImageEffect>
@@ -70,10 +80,20 @@ function FlagCountries({ data }) {
       ))}
       {isLoading && (
         <Waiting>
-          <img src={roller} alt="loading icon" />
+          <img
+            src={roller}
+            alt="loading icon"
+            style={{
+              position: "fixed",
+              left: "50%",
+              bottom: "20%",
+              transform: "translateX(-50%)",
+            }}
+          />
         </Waiting>
       )}
-      {endFetch && "Hold on this is end dude"}
+      {endFetch && <EndText>Hold on this is the end</EndText>}
+      <div ref={userRef}></div>
     </UlStyle>
   );
 }

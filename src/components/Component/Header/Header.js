@@ -28,7 +28,6 @@ import {
   BlockBeforeAnimated,
 } from "../../Style/Header/headerstyle";
 
-
 function Header() {
   const [show, setShow] = useState({
     home: false,
@@ -45,20 +44,20 @@ function Header() {
   const FLAGS_URL = "https://restcountries.eu/rest/v2/all";
 
   useEffect(() => {
-    const abortControl = new AbortController();
-    const signal = abortControl.signal;
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
 
     const getFlag = async () => {
       await axios
-        .get(FLAGS_URL, { signal: signal })
+        .get(FLAGS_URL, { cancelToken: source.token })
         .then((res) => {
           if (res.status === 200) {
             return setData(res.data);
           }
         })
         .catch((err) => {
-          if (err.name === "AbortError") {
-            console.log("axios aborted");
+          if (axios.isCancel(err)) {
+            console.log("axios request cancelled");
           } else {
             console.log(err);
           }
@@ -67,41 +66,44 @@ function Header() {
     getFlag();
 
     return () => {
-      abortControl.abort();
+      source.cancel("axios request cancelled");
     };
   }, []);
 
   useEffect(() => {
     searchRef.current && searchRef.current.focus();
   }, [show.zoom]);
-  
+
   const changeColor = () => {
-    if(document.scrollingElement.scrollTop > 50){
+    if (document.scrollingElement.scrollTop > 50) {
       setTopScroll(true);
-    } else{
+    } else {
       setTopScroll(false);
     }
-  }
-  
-useEffect(() => {
-document.addEventListener('scroll', changeColor);
-return () => document.removeEventListener('scroll', changeColor)
-},[topScroll])
+  };
 
-
+  useEffect(() => {
+    document.addEventListener("scroll", changeColor);
+    return () => document.removeEventListener("scroll", changeColor);
+  }, [topScroll]);
 
   return (
-    <NavSite style={{backgroundColor: topScroll ? 'whitesmoke' : 'inherit', transition: 'all 0.5s ease' }}>
+    <NavSite
+      style={{
+        backgroundColor: topScroll ? "whitesmoke" : "inherit",
+        transition: "all 0.5s ease",
+      }}
+    >
       <Wrapper>
         <a style={{ outline: "0" }} href="/#">
           <Logo src={logo} />
         </a>
-        <Ul style={{color: topScroll ? '#2a2d34' : 'whitesmoke' }}>
-          <LiStyle 
+        <Ul style={{ color: topScroll ? "#2a2d34" : "whitesmoke" }}>
+          <LiStyle
             onMouseEnter={() => setShow({ home: true })}
             onMouseLeave={() => setShow({ home: false })}
           >
-            <SpanStyle>Home</SpanStyle>
+            <SpanStyle>Flags</SpanStyle>
             {show.home && (
               <HoverBack
                 onMouseLeave={() => setShow({ home: false })}

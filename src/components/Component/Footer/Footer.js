@@ -7,7 +7,7 @@ import { ReactComponent as Coding } from "../../../assets/Footer/coding.svg";
 import { ReactComponent as Laptop } from "../../../assets/Footer/laptop.svg";
 import { ReactComponent as Man } from "../../../assets/Footer/man.svg";
 import { ReactComponent as Cloud } from "../../../assets/Footer/cloud.svg";
-import { cloud } from "../../Style/keyframes";
+import { sunMove, cloudMove } from "../../Style/keyframes";
 
 const FooterStyle = styled.div`
   position: relative;
@@ -118,14 +118,31 @@ const WallStyle = styled.div`
 
 const CloudStyle = styled(Cloud)`
   position: absolute;
-  bottom: 30%;
-  left: -15%;
+  bottom: 20%;
+  right: 15%;
   width: 200px;
-  height: 150px;
-  animation-name: ${cloud};
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  height: 100px;
+  #Vector_10 {
+    animation-name: ${cloudMove};
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  #Vector,
+  #Vector_1,
+  #Vector_2,
+  #Vector_3,
+  #Vector_4,
+  #Vector_5,
+  #Vector_6,
+  #Vector_7,
+  #Vector_8,
+  #Vector_9 {
+    animation-name: ${sunMove};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 `;
 
 function Footer() {
@@ -135,7 +152,7 @@ function Footer() {
         <BoxNo1>
           <ImageLogo />
           <Text>
-            &copy; 2019 SaasLand, LLC. All rights reserved.
+            &copy; 2019 Hell Yeah All rights reserved.
             <SpanText>Proudly made in NY</SpanText>
           </Text>
           <WrapperIcon>

@@ -10,7 +10,7 @@ export const NavSite = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index:2;
+  z-index: 2;
 `;
 
 export const Wrapper = styled.div`
@@ -23,22 +23,23 @@ export const Wrapper = styled.div`
 `;
 
 export const Ul = styled.ul`
-  width: 500px;
+  height: 100px;
+  width: 700px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
-
 
 export const LiStyle = styled.li`
   position: relative;
-  padding: 60px 0;
+  align-self:center;
+  padding:42px 0;
   &::before {
     content: "";
     height: 2px;
     background-color: #ffffff;
     display: inline-block;
     position: absolute;
-    bottom: 55px;
+    bottom: 60px;
     left: 0px;
     width: 0%;
     transition: width 0.3s ease-in-out;
@@ -52,7 +53,7 @@ export const LiStyle = styled.li`
     background-color: #ffffff;
     display: inline-block;
     position: absolute;
-    bottom: 55px;
+    bottom: 38px;
     right: 0;
     width: 0%;
     transition: width 0.3s ease-in-out;
@@ -65,12 +66,13 @@ export const LiStyle = styled.li`
 export const LiStyleZoom = styled.li`
   position: relative;
   padding: 60px 0;
+  align-self: center;
   cursor: pointer;
 `;
 
 export const BlockBeforeAnimated = styled.div`
   position: absolute;
-  right: 0%;
+  right: 0;
   left: 0;
   bottom: 0;
   top: 0;
@@ -162,7 +164,7 @@ export const HoverBack = styled.div`
 
 export const HoverPage = styled.div`
   position: absolute;
-  bottom: -323px;
+  bottom: -342px;
   left: -45px;
   background-color: #ffffff;
   animation-name: ${displayMenuElement};
@@ -170,7 +172,7 @@ export const HoverPage = styled.div`
 `;
 
 export const HoverShop = styled(HoverPage)`
-  bottom: -421px;
+  bottom: -440px;
 `;
 
 export const HoverElement = styled.div`
@@ -185,5 +187,5 @@ export const HoverElement = styled.div`
 `;
 
 export const HoverPortfolio = styled(HoverPage)`
-  bottom: -115px;
+  bottom: -134px;
 `;
