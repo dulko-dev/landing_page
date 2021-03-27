@@ -5,7 +5,7 @@ import Shop from "./Shop";
 import Element from "./Element";
 import Portfolio from "./Portfolio";
 import FlagCountries from "./FlagCountries";
-import logo from "../../../assets/Header/logo2.png";
+import logo from "../../../assets/header/logo2.png";
 
 import {
   Wrapper,

@@ -1,11 +1,11 @@
 import React from "react";
-import bg from "../../../assets/Nav/pie.png";
-import img4 from "../../../assets/Nav/elements_four.png";
-import img3 from "../../../assets/Nav/elements_three.png";
-import img1 from "../../../assets/Nav/elements_one.png";
-import img5 from "../../../assets/Nav/elements_five.png";
-import img6 from "../../../assets/Nav/elements_six.png";
-import img2 from "../../../assets/Nav/elements_two.png";
+import bg from "../../../assets/nav/pie.png";
+import img4 from "../../../assets/nav/elements_four.png";
+import img3 from "../../../assets/nav/elements_three.png";
+import img1 from "../../../assets/nav/elements_one.png";
+import img5 from "../../../assets/nav/elements_five.png";
+import img6 from "../../../assets/nav/elements_six.png";
+import img2 from "../../../assets/nav/elements_two.png";
 
 import {
   NavWrapper,
