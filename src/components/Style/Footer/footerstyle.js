@@ -118,7 +118,7 @@ export const CloudStyle = styled(Cloud)`
   bottom: 20%;
   right: 15%;
   width: 200px;
-  height: 100px;
+  height: 160px;
   #Vector_10 {
     animation-name: ${cloudMove};
     animation-duration: 2s;
