@@ -1,4 +1,4 @@
-<h1 align='center'>Landscape Saasland</h1>
+<h1 align='center'>Landscape Saasland Clone</h1>
 <p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20screen.png' alt='landscape' title='landscape' /></p>
 
 ## Table of Contents
@@ -9,7 +9,7 @@
 - [License](#license)
 
 <h2>Demo</h2>
-<p>Here is a working live demo - <a target='_blanket' href='https://dulko-landscape.netlify.app/' <p>DashboardApp</p> </a></p>
+<p>Here is a working live demo - <a target='_blanket' href='https://dulko-landscape.netlify.app/' <p>Landscape</p> </a></p>
 
 ## Introduction
   <table>
@@ -27,7 +27,7 @@ Project is created with:
 <ul>
   <li>react:
     <ul>
-      <li>react-scripts</li>
+      <li>react-use</li>
       <li>Intersection Observer API</li>
     </ul>
   </li>
@@ -46,11 +46,11 @@ Project is created with:
 
 
 ## Site
-<h3>Steps</h3>
-<p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20steps.png' alt='landscape - steps' title='landscape' /></p>
+<h3>Banner</h3>
+<p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20banner.png' alt='landscape - banner' title='landscape' /></p>
 
 <h3>Subscription</h3>
-<p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20subscription.png' alt='landscape - subs' title='landscape' /></p>
+<p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20subs.png' alt='landscape - subs' title='landscape' /></p>
 
 
 ## License
