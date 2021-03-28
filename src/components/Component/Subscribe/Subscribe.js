@@ -18,7 +18,7 @@ import {
   RightBox,
 } from "../../Style/Subscription/subscriptionstyle";
 
-function Subscribe() {
+function Subscribe(_, ref) {
   const [show, setShow] = useState({
     firstBox: false,
     secondBox: false,
@@ -26,7 +26,7 @@ function Subscribe() {
   });
 
   return (
-    <SubscribStyle>
+    <SubscribStyle ref={ref}>
       <Wrapper>
         <Title>
           14-day free trial.
@@ -107,4 +107,6 @@ function Subscribe() {
   );
 }
 
-export default Subscribe;
+const subscribeRef = React.forwardRef(Subscribe);
+
+export default subscribeRef;

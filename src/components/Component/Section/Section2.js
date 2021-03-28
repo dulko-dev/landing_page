@@ -15,7 +15,7 @@ import {
   Span,
 } from "../../Style/Section/section2style";
 
-function Section2() {
+function Section2(_, ref) {
   const [visible, setVisible] = useState(false);
   const [secondVisible, setSecondVisible] = useState(false);
   const [thirdVisible, setThirdVisible] = useState(false);
@@ -86,7 +86,7 @@ function Section2() {
   }, []);
 
   return (
-    <Section>
+    <Section ref={ref}>
       <Content>
         <LeftBox>
           <Image
@@ -151,4 +151,6 @@ function Section2() {
   );
 }
 
-export default Section2;
+const section2Ref = React.forwardRef(Section2);
+
+export default section2Ref;

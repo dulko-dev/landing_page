@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { movePlanet } from "../keyframes";
 
-
 export const NavWrapper = styled.div`
   min-height: calc(100vh - 100px);
   max-width: 1400px;
@@ -131,4 +130,22 @@ export const ImgDivRedDoughnut = styled.div`
   height: 350px;
   width: 100px;
   z-index: -1;
+`;
+
+export const ArrowTop = styled.i`
+  color: ${(props) => (props.color ? "#000" : "#fff")};
+  position: fixed;
+  right: 50%;
+  transform: translateX(-50%);
+  bottom: 3%;
+  cursor: pointer;
+  z-index: 1;
+  &:hover {
+    transition: 0.3s;
+    color: red;
+  }
+`;
+
+export const ArrowBottom = styled(ArrowTop)`
+  left: 50%;
 `;

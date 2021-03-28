@@ -20,7 +20,7 @@ import {
   Button,
 } from "../../Style/Section/section3style";
 
-function Section3() {
+function Section3(_, ref) {
   const [visible, setVisible] = useState(false);
   const [secondVisible, setSecondVisible] = useState(false);
   const [thirdVisible, setThirdVisible] = useState(false);
@@ -111,7 +111,7 @@ function Section3() {
   }, []);
 
   return (
-    <Section>
+    <Section ref={ref}>
       <Content>
         <LeftBox>
           <Title visible={visible} ref={firstRef}>
@@ -235,7 +235,7 @@ function Section3() {
           <Image
             src={verticalGraph}
             alt="vertical graph"
-            top="5%"
+            top="10%"
             left="60%"
             visibleTop={visible}
             ref={firstRef}
@@ -253,7 +253,7 @@ function Section3() {
             src={visitorsGraph}
             alt="visitors graph"
             left="52%"
-            top="50%"
+            top="40%"
             ref={fourthRef}
             visible={fourthVisible}
           />
@@ -280,4 +280,6 @@ function Section3() {
   );
 }
 
-export default Section3;
+const section3Ref = React.forwardRef(Section3);
+
+export default section3Ref;

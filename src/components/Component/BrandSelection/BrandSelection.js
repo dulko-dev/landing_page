@@ -25,7 +25,7 @@ import {
   ImageLogo12,
 } from "../../Style/BrandSelection/brandSelection";
 
-function BrandSelection() {
+function BrandSelection(_, ref) {
   const [hidden, setHidden] = useState(false);
   const [imgValue, setImgValue] = useState("");
 
@@ -35,7 +35,7 @@ function BrandSelection() {
   };
 
   return (
-    <BrandStyle>
+    <BrandStyle ref={ref}>
       <Wrapper>
         <LeftBox>
           <Title>
@@ -108,4 +108,6 @@ function BrandSelection() {
   );
 }
 
-export default BrandSelection;
+const brandSelectionRef = React.forwardRef(BrandSelection);
+
+export default brandSelectionRef;

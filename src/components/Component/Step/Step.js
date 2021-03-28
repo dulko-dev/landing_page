@@ -18,7 +18,7 @@ import {
   ThirdImage,
 } from "../../Style/Step/stepstyle";
 
-function Step() {
+function Step(_, ref) {
   const [firstRow, setFirstRow] = useState(false);
   const [secondRow, setSecondRow] = useState(false);
   const [thirdRow, setThirdRow] = useState(false);
@@ -73,7 +73,7 @@ function Step() {
   }, []);
 
   return (
-    <StepStyle>
+    <StepStyle ref={ref}>
       <Wrapper>
         <Title>
           Easy Setup <SpanTitle>Get started in 30 seconds</SpanTitle>
@@ -111,4 +111,6 @@ function Step() {
   );
 }
 
-export default Step;
+const stepRef = React.forwardRef(Step);
+
+export default stepRef;

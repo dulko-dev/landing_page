@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bg from "../../../assets/nav/pie.png";
 import img4 from "../../../assets/nav/elements_four.png";
 import img3 from "../../../assets/nav/elements_three.png";
@@ -6,6 +6,7 @@ import img1 from "../../../assets/nav/elements_one.png";
 import img5 from "../../../assets/nav/elements_five.png";
 import img6 from "../../../assets/nav/elements_six.png";
 import img2 from "../../../assets/nav/elements_two.png";
+import { useWindowScroll } from "react-use";
 
 import {
   NavWrapper,
@@ -25,9 +26,42 @@ import {
   ImgDivRedDoughnut,
   ImgDiv2Balls,
   Img3Div,
+  ArrowTop,
+  ArrowBottom,
 } from "../../Style/Nav/navstyle";
 
-function Nav() {
+function Nav({ scrollDown, display }) {
+  const [colorArrowBottom, setColorArrowBottom] = useState(false);
+  const [colorArrowTop, setColorArrowTop] = useState(false);
+  const [displayTop, setDisplayTop] = useState(false);
+  const { y: pageYOffsetTop } = useWindowScroll();
+
+  useEffect(() => {
+    if (pageYOffsetTop > 50) {
+      setDisplayTop(true);
+    } else {
+      setDisplayTop(false);
+    }
+  }, [pageYOffsetTop]);
+
+  useEffect(() => {
+    if (
+      (pageYOffsetTop >= 2980 && pageYOffsetTop <= 3545) ||
+      pageYOffsetTop >= 6315 ||
+      pageYOffsetTop <= 50
+    ) {
+      setColorArrowTop(false);
+      setColorArrowBottom(false);
+    } else {
+      setColorArrowTop(true);
+      setColorArrowBottom(true);
+    }
+  }, [pageYOffsetTop]);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <NavWrapper>
       <WrappBoxes>
@@ -60,6 +94,20 @@ function Nav() {
       <Img3Div>
         <Img1 src={img1} alt="circle" />
       </Img3Div>
+      {displayTop && (
+        <ArrowTop
+          className="fas fa-arrow-circle-up fa-2x"
+          onClick={scrollTop}
+          color={colorArrowTop ? 1 : 0}
+        ></ArrowTop>
+      )}
+      {display && (
+        <ArrowBottom
+          className="fas fa-arrow-circle-down fa-2x"
+          color={colorArrowBottom ? 1 : 0}
+          onClick={scrollDown}
+        ></ArrowBottom>
+      )}
     </NavWrapper>
   );
 }

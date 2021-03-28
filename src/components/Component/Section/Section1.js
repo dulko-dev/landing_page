@@ -15,9 +15,9 @@ import {
   Pattern,
 } from "../../Style/Section/section1style";
 
-function Section1() {
+function Section1(_,ref) {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Main>
         <Text>
           <Title>Analytics</Title>
@@ -44,4 +44,6 @@ function Section1() {
   );
 }
 
-export default Section1;
+const forwardSection = React.forwardRef(Section1);
+
+export default forwardSection;

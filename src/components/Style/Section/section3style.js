@@ -7,14 +7,13 @@ import {
 } from "../../Style/keyframes";
 
 export const Section = styled.div`
+  padding-top: 100px;
   position: relative;
   width: 100%;
-  /* height: 100vh; */
 `;
 
 export const Content = styled.div`
   padding-top: 50px;
-
   max-width: 1400px;
   margin: 0 auto;
   display: flex;

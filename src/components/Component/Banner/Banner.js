@@ -18,9 +18,9 @@ import {
   TextNameSpan,
 } from "../../Style/Banner/bannerstyle";
 
-function Banner() {
+function Banner(_, ref) {
   return (
-    <BannerPage>
+    <BannerPage ref={ref}>
       <Wrapper>
         <BgImageTop src={case1} alt="first stain" />
         <BgImageBottom src={case2} alt="second stain" />
@@ -54,4 +54,6 @@ function Banner() {
   );
 }
 
-export default Banner;
+const bannerRef = React.forwardRef(Banner);
+
+export default bannerRef;

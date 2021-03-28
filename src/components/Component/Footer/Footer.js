@@ -24,9 +24,9 @@ import {
   LeaftR,
 } from "../../Style/Footer/footerstyle";
 
-function Footer() {
+function Footer(_, ref) {
   return (
-    <FooterStyle>
+    <FooterStyle ref={ref}>
       <Wrapper>
         <BoxNo1>
           <ImageLogo />
@@ -115,4 +115,6 @@ function Footer() {
   );
 }
 
-export default Footer;
+const FooterRef = React.forwardRef(Footer);
+
+export default FooterRef;
