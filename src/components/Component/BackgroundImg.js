@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ImgBg = styled.div`
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 937px;
   width: 100%;
   z-index: -1;
   background-image: -moz-linear-gradient(-50deg, #22186e 0, #0e044b 100%);

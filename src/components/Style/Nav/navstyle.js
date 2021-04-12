@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { movePlanet } from "../keyframes";
 
 export const NavWrapper = styled.div`
-  height: 843.3px;
+  height: 837px;
   width: 1400px;
   margin: 0 auto;
 `;
@@ -116,7 +116,7 @@ export const Img3Div = styled.div`
 export const ImgDiv2Balls = styled.div`
   position: absolute;
   height: 200px;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 400px;
   z-index: -1;

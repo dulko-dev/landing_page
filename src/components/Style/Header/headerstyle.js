@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   max-width: 1400px;
-  max-height: 100px;
+  height: 100px;
 `;
 
 export const Ul = styled.ul`
