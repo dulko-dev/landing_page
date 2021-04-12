@@ -31,6 +31,7 @@ function App() {
 
   const { y: pageYOffsetBottom } = useWindowScroll();
 
+  console.log(pageYOffsetBottom);
   const scrollDown = () => {
     if (pageYOffsetBottom < 930) {
       window.scrollTo({
@@ -82,7 +83,6 @@ function App() {
       setDisplay(true);
     }
   }, [pageYOffsetBottom]);
-
 
   return (
     <AppStyle>

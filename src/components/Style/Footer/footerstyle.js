@@ -9,7 +9,7 @@ import { ReactComponent as Cloud } from "../../../assets/Footer/cloud.svg";
 export const FooterStyle = styled.div`
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 843.3px;
   background-color: #413c85;
 `;
 export const Wrapper = styled.div`

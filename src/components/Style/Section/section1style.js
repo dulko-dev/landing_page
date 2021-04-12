@@ -3,7 +3,7 @@ import pattern from "../../../assets/Section1/pattern.png";
 
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  height: 937px;
   width: 100%;
 `;
 export const Main = styled.div`

@@ -4,7 +4,7 @@ import { animatedButton } from "../../Style/keyframes";
 export const BannerPage = styled.div`
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 562.2px;
   background-color: #0e044b;
 `;
 

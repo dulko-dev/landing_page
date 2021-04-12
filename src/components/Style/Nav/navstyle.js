@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { movePlanet } from "../keyframes";
 
 export const NavWrapper = styled.div`
-  min-height: calc(100vh - 100px);
-  max-width: 1400px;
+  height: 843.3px;
+  width: 1400px;
   margin: 0 auto;
 `;
 

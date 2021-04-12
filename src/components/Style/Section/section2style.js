@@ -4,13 +4,13 @@ import { section2, sectionChart, section2Comment } from "../../Style/keyframes";
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 937px;
   &::after {
     content: "";
     position: absolute;
     left: 15%;
     right: 15%;
-    bottom: 150px;
+    bottom: 15%;
     background-color: rgba(138, 142, 145, 0.3);
     height: 1px;
   }
