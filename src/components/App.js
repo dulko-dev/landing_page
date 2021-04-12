@@ -19,7 +19,6 @@ const AppStyle = styled.div`
 
 function App() {
   const [display, setDisplay] = useState(true);
-
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
@@ -31,7 +30,6 @@ function App() {
 
   const { y: pageYOffsetBottom } = useWindowScroll();
 
-  console.log(pageYOffsetBottom);
   const scrollDown = () => {
     if (pageYOffsetBottom < 930) {
       window.scrollTo({
@@ -77,7 +75,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (pageYOffsetBottom > 7000) {
+    if (pageYOffsetBottom > 7100) {
       setDisplay(false);
     } else {
       setDisplay(true);

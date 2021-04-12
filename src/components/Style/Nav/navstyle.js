@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { movePlanet } from "../keyframes";
 
 export const NavWrapper = styled.div`
+
+  position: relative;
   height: 837px;
   width: 1400px;
   margin: 0 auto;
@@ -114,6 +116,7 @@ export const Img3Div = styled.div`
 `;
 
 export const ImgDiv2Balls = styled.div`
+
   position: absolute;
   height: 200px;
   bottom: 0px;
@@ -133,7 +136,7 @@ export const ImgDivRedDoughnut = styled.div`
 `;
 
 export const ArrowTop = styled.i`
-  color: ${(props) => (props.color ? "#000" : "#fff")};
+  color: #A85751;
   position: fixed;
   right: 50%;
   transform: translateX(-50%);

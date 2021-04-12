@@ -31,8 +31,6 @@ import {
 } from "../../Style/Nav/navstyle";
 
 function Nav({ scrollDown, display }) {
-  const [colorArrowBottom, setColorArrowBottom] = useState(false);
-  const [colorArrowTop, setColorArrowTop] = useState(false);
   const [displayTop, setDisplayTop] = useState(false);
   const { y: pageYOffsetTop } = useWindowScroll();
 
@@ -44,19 +42,6 @@ function Nav({ scrollDown, display }) {
     }
   }, [pageYOffsetTop]);
 
-  useEffect(() => {
-    if (
-      (pageYOffsetTop >= 2980 && pageYOffsetTop <= 3545) ||
-      pageYOffsetTop >= 6315 ||
-      pageYOffsetTop <= 50
-    ) {
-      setColorArrowTop(false);
-      setColorArrowBottom(false);
-    } else {
-      setColorArrowTop(true);
-      setColorArrowBottom(true);
-    }
-  }, [pageYOffsetTop]);
 
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -98,13 +83,11 @@ function Nav({ scrollDown, display }) {
         <ArrowTop
           className="fas fa-arrow-circle-up fa-2x"
           onClick={scrollTop}
-          color={colorArrowTop ? 1 : 0}
         ></ArrowTop>
       )}
       {display && (
         <ArrowBottom
           className="fas fa-arrow-circle-down fa-2x"
-          color={colorArrowBottom ? 1 : 0}
           onClick={scrollDown}
         ></ArrowBottom>
       )}
