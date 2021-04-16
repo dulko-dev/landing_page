@@ -1,4 +1,4 @@
-<h1 align='center'>Landscape Saasland Clone</h1>
+<h1 align='center'>Landing Saasland Clone</h1>
 <p align='center'><img src='https://github.com/dulko-dev/landscape_animation/blob/main/landscape%20-%20screen.png' alt='landscape' title='landscape' /></p>
 
 ## Table of Contents
@@ -15,7 +15,7 @@
   <table>
     <tr>
       <td>
-        <p>This is a simple landsacpe page there where used some technic of styles and animations</p>
+        <p>This is a simple landing page there where used some technic of styles and animations</p>
         <p>This is the desktop version (RWD site is in progress)</p>
         <p>This project was bootstrapped with - <a href='https://github.com/facebook/create-react-app' <p>Create React App </p></a></p>
       </td>
