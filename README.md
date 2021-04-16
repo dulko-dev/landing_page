@@ -9,7 +9,7 @@
 - [License](#license)
 
 <h2>Demo</h2>
-<p>Here is a working live demo - <a target='_blanket' href='https://dulko-landscape.netlify.app/' <p>Landscape</p> </a></p>
+<p>Here is a working live demo - <a target='_blanket' href='https://dulko-landing-page.netlify.app/' <p>Landing_Page</p> </a></p>
 
 ## Introduction
   <table>
