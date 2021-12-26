@@ -71,11 +71,11 @@ function FlagCountries({ data }) {
   return (
     <UlStyle>
       {current.map((flag) => (
-        <LiStyle key={flag.name}>
+        <LiStyle key={flag.name.common}>
           <ImageEffect>
-            <ImageFlag src={flag.flag} />
+            <ImageFlag src={flag.flags.svg} />
           </ImageEffect>
-          <Title>{flag.name}</Title>
+          <Title>{flag.name.common}</Title>
         </LiStyle>
       ))}
       {isLoading && (

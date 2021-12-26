@@ -41,7 +41,7 @@ function Header() {
   const [topScroll, setTopScroll] = useState(false);
 
   const searchRef = useRef();
-  const FLAGS_URL = "https://restcountries.eu/rest/v2/all";
+  const FLAGS_URL = "https://restcountries.com/v3.1/all";
 
   useEffect(() => {
     const cancelToken = axios.CancelToken;
